@@ -1,0 +1,122 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. Learn chords, strumming, and basic songs.",
+    "image": "https://i.ibb.co.com/tpXfyjvD/vitaly-gariev-MPh-Xl-Kd-T5-Vo-unsplash.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers to improve fluency and confidence.",
+    "image": "https://i.ibb.co.com/QjtHCbTL/2.png",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "React.js Mentorship",
+    "providerName": "Fahim Ahmed",
+    "providerEmail": "fahim@skillswap.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Hands-on React.js mentoring for beginners and intermediate developers.",
+    "image": "https://i.ibb.co.com/hR5TKPph/lautaro-andreani-xk-Baqlcqeb4-unsplash.jpg",
+    "category": "Programming"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Graphic Design Basics",
+    "providerName": "Emily Chen",
+    "providerEmail": "emily@skillswap.com",
+    "price": 18,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Learn Canva, color theory, typography, and social media design fundamentals.",
+    "image": "https://i.ibb.co.com/Nd8K32TQ/emily-bernal-v9v-II5g-V8-Lw-unsplash.jpg",
+    "category": "Design"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Maya Singh",
+    "providerEmail": "maya@skillswap.com",
+    "price": 15,
+    "rating": 4.8,
+    "slotsAvailable": 8,
+    "description": "Improve flexibility, posture, and mindfulness through guided yoga sessions.",
+    "image": "https://i.ibb.co.com/PZjpFL23/kaylee-garrett-Gapr-Wy-Iw66o-unsplash.jpg",
+    "category": "Fitness"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Photography Essentials",
+    "providerName": "David Wilson",
+    "providerEmail": "david@skillswap.com",
+    "price": 22,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Master camera settings, composition, and lighting techniques.",
+    "image": "https://i.ibb.co.com/SDgfkDwQ/lucas-favre-4x-67z-Ta-Go-unsplash.jpg",
+    "category": "Photography"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Home Cooking Masterclass",
+    "providerName": "Nusrat Jahan",
+    "providerEmail": "nusrat@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 7,
+    "description": "Learn practical cooking skills and delicious homemade recipes.",
+    "image": "https://i.ibb.co.com/sv8psfDH/louis-hansel-0s-YLBZjg-TTw-unsplash.jpg",
+    "category": "Cooking"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Digital Marketing Fundamentals",
+    "providerName": "Ryan Cooper",
+    "providerEmail": "ryan@skillswap.com",
+    "price": 28,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Introduction to SEO, social media marketing, and content strategy.",
+    "image": "https://i.ibb.co.com/j2MD067/social-sail-Uno9-TGPs4pc-unsplash.jpg",
+    "category": "Marketing"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Public Speaking Coaching",
+    "providerName": "Farzana Rahman",
+    "providerEmail": "farzana@skillswap.com",
+    "price": 17,
+    "rating": 4.8,
+    "slotsAvailable": 6,
+    "description": "Build confidence and improve presentation and communication skills.",
+    "image": "https://i.ibb.co.com/sdSVHPWv/alberto-bigoni-kvin-Eq5-Utfw-unsplash.jpg",
+    "category": "Communication"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Basic Video Editing",
+    "providerName": "Jake Thompson",
+    "providerEmail": "jake@skillswap.com",
+    "price": 24,
+    "rating": 4.7,
+    "slotsAvailable": 3,
+    "description": "Learn video editing using Premiere Pro and CapCut for social media content.",
+    "image": "https://i.ibb.co.com/bgQrDScr/nejc-soklic-2j-Tu7-H9l6-JA-unsplash.jpg",
+    "category": "Media"
+  }
+]
