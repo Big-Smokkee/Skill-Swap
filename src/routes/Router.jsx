@@ -1,12 +1,23 @@
 import { createBrowserRouter } from "react-router";
 
 import HomeLayout from "../layouts/HomeLayout";
+import Hero from "../pages/Hero";
 
 
 const Router = createBrowserRouter([
     {
         path: '/',
-        Component: HomeLayout
+        Component: HomeLayout,
+        children: [
+            {
+                index: true,
+                loader: () => fetch("/skills.json"),
+                Component: Hero
+            },
+
+
+        ]
+
     },
     {
         path: '/about',
