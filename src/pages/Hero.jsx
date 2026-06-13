@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SkillCard from '../components/SkillCard';
 
 const Hero = () => {
     const data = useLoaderData();
@@ -38,9 +39,12 @@ const Hero = () => {
                 <button className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400 text-lg px-8 py-4">
                     Get Started Now
                 </button>
-
             </div>
 
+            {/* Skill card */}
+            <div className='my-6'>
+                <SkillCard data={data}></SkillCard>
+            </div>
         </div>
     );
 };

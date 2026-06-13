@@ -15,7 +15,6 @@ const Router = createBrowserRouter([
                 Component: Hero
             },
 
-
         ]
 
     },
