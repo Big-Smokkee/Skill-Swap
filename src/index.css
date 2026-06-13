@@ -1,2 +1,8 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui"{
+  themes: dark --default;
+}
+a.active{
+  @apply text-emerald-500;
+  text-decoration: underline;
+}
