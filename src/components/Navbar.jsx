@@ -1,12 +1,11 @@
 import { NavLink } from "react-router";
-
+import { PiSwapDuotone } from "react-icons/pi";
 
 const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/about'>About Us</NavLink></li>
-        <li><NavLink to='/browse'>Browse</NavLink></li>
-        <li><NavLink to='/profile'>Profile</NavLink></li>
+        <li><NavLink to='/browse'>Browse Skills</NavLink></li>
+        <li><NavLink to='/profile'>My Profile</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -21,7 +20,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Skill<span className="text-emerald-400">Swap</span></a>
+                <a className="btn btn-ghost text-xl">Skill<span className="text-emerald-400">Swap </span><span className="text-emerald-400"><PiSwapDuotone /></span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

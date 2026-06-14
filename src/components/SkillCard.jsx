@@ -1,19 +1,19 @@
 import { FaDollarSign, FaStar } from "react-icons/fa";
 
 const SkillCard = ({ data }) => {
+    // console.log(data)
     return (
         <div className="space-y-6">
             {/* Section Title */}
-            <div className="text-xl bg-black w-48 px-6 py-2 rounded-full 
-                flex justify-center items-center text-white 
-                hover:text-emerald-400 transition-colors duration-300 shadow-md">
-                <h4 className="font-semibold">Popular Skills</h4>
-            </div>
+
+            <h2 className="text-5xl font-bold text-center">
+                Popular Skills
+            </h2>
 
             {/* Grid of Skills */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {data.map((d, idx) => (
-                    <div key={idx}
+                {data.map((d, i) => (
+                    <div key={i}
                         className=" rounded-xl shadow-lg p-4 
                         hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
 
@@ -26,8 +26,16 @@ const SkillCard = ({ data }) => {
                             {d.skillName}
                         </h2>
                         <div className="flex items-center justify-between">
-                            <p className="text-sm "><span className="text-yellow-400"><FaStar></FaStar></span> {d.rating}</p>
-                            <p className="text-sm "><span className="text-green-400"><FaDollarSign></FaDollarSign></span> {d.price}</p>
+                            <div className="flex items-center gap-1">
+                                <span className="text-yellow-400"><FaStar></FaStar></span>
+                                <p className="text-sm ">{d.rating}</p>
+                            </div>
+                            <div className="flex items-center gap-1">
+                                <span className="text-green-400"><FaDollarSign></FaDollarSign></span>
+                                <p className="text-sm ">{d.price}</p>
+                            </div>
+
+
                         </div>
 
                         {/* CTA Button */}
