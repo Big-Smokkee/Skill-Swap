@@ -21,7 +21,7 @@ const Hero = () => {
     bg-clip-text text-transparent font-bold">Swap Skills</h2>
                 <h2 className="text-5xl mt-4">Unlock Potential !</h2>
             </div>
-            <section className='my-6'>
+            <section className='my-10'>
                 <Swiper
                     modules={[Autoplay, Pagination]}
                     slidesPerView={1}
