@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { PiSwapDuotone } from "react-icons/pi";
 
 const Navbar = () => {
@@ -29,12 +29,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end flex gap-2">
 
-                <button className="btn bg-black text-white hover:bg-emerald-600">
+                <Link to='/login'
+                    className="btn bg-black text-white hover:bg-emerald-600">
                     Login
-                </button>
-                <button className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
-                    SignUp
-                </button>
+                </Link>
+                <Link to="/signup"
+                    className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
+                    Register
+                </Link>
             </div>
         </div>
     );
