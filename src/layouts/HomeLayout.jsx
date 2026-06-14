@@ -1,11 +1,9 @@
-import { Outlet, useLoaderData } from 'react-router';
+import { Outlet } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 
 const HomeLayout = () => {
-    const data = useLoaderData();
-    console.log(data);
     return (
         <>
             <nav>
