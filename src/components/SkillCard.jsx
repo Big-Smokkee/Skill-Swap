@@ -1,4 +1,5 @@
 import { FaDollarSign, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const SkillCard = ({ data }) => {
     // console.log(data)
@@ -39,10 +40,10 @@ const SkillCard = ({ data }) => {
                         </div>
 
                         {/* CTA Button */}
-                        <button className="btn btn-outline border-emerald-500 text-emerald-600 
+                        <Link to={`/skills/${i}`} className="btn btn-outline border-emerald-500 text-emerald-600 
                             hover:bg-emerald-600 hover:text-white mt-4 w-full">
                             View Details
-                        </button>
+                        </Link>
                     </div>
                 ))}
             </div>
