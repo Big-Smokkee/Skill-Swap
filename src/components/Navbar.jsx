@@ -5,12 +5,13 @@ import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-    const { user, logoutUser } = use(AuthContext);
+    const { user, logoutUser, setUser } = use(AuthContext);
     console.log(user);
     const handleLogout = () => {
         logoutUser()
             .then(() => {
                 toast("Logout Successfull");
+                setUser(null);
             })
             .catch((err) => {
                 toast("There was a problem when logging out");
