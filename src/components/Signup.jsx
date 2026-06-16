@@ -1,8 +1,28 @@
+import { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Signup = () => {
-    const handleRegister = () => {
+    const { signUpNewUser } = use(AuthContext);
+    console.log(signUpNewUser);
+    const handleRegister = (e) => {
+        e.preventDefault();
+        // const name = e.target.name.value;
+        const email = e.target.email.value;
+        // const photoURL = e.target.photoURL.value;
+        const password = e.target.password.value;
+        // console.log({ name, email, photoURL, password });
+        signUpNewUser(email, password)
+            .then(res => {
+                toast("Register completed!");
+                console.log(res.user)
+            })
+            .catch(err => {
+                toast("Error in registration");
+                console.log(err.message);
+            })
 
     }
     return (
@@ -12,16 +32,16 @@ const Signup = () => {
                 <form onSubmit={handleRegister} className="fieldset">
                     {/* name */}
                     <label className="label">Name</label>
-                    <input type="text" className="input" placeholder="Name" />
+                    <input type="text" className="input" placeholder="Name" name="name" />
                     {/* email */}
                     <label className="label">Email</label>
-                    <input type="email" className="input" placeholder="Email" />
+                    <input type="email" className="input" placeholder="Email" name="email" />
                     {/* phot url */}
                     <label className="label">Photo URL</label>
-                    <input type="email" className="input" placeholder="Photo URL" />
+                    <input type="text" className="input" placeholder="Photo URL" name="photoURL" />
                     {/* password */}
                     <label className="label">Password</label>
-                    <input type="password" className="input" placeholder="Password" />
+                    <input type="password" className="input" placeholder="Password" name="password" />
                     <button className="btn btn-neutral mt-4">Register</button>
                     <p className="">or, </p>
                     {/* Google */}

@@ -1,7 +1,22 @@
 import { Link, NavLink } from "react-router";
 import { PiSwapDuotone } from "react-icons/pi";
+import { use } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+    const { user, logoutUser } = use(AuthContext);
+    console.log(user);
+    const handleLogout = () => {
+        logoutUser()
+            .then(() => {
+                toast("Logout Successfull");
+            })
+            .catch((err) => {
+                toast("There was a problem when logging out");
+                console.log(err);
+            })
+    }
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/browse'>Browse Skills</NavLink></li>
@@ -28,15 +43,23 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2">
+                {
+                    user ? <button onClick={handleLogout}
+                        className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
+                        Logout
+                    </button> : <div>
+                        <Link to='/login'
+                            className="btn bg-black text-white hover:bg-emerald-600">
+                            Login
+                        </Link>
+                        <Link to="/signup"
+                            className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
+                            Register
+                        </Link>
+                    </div>
+                }
 
-                <Link to='/login'
-                    className="btn bg-black text-white hover:bg-emerald-600">
-                    Login
-                </Link>
-                <Link to="/signup"
-                    className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
-                    Register
-                </Link>
+
             </div>
         </div>
     );

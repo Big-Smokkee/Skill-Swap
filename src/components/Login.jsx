@@ -1,9 +1,26 @@
+import { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
-    const handleLogin = () => {
-
+    const { user, loginExistingUser } = use(AuthContext);
+    console.log(user);
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        loginExistingUser(email, password)
+            .then(res => {
+                const user = res.user
+                toast("Login Successful!");
+                console.log(user);
+            })
+            .catch(err => {
+                toast("Invalid Credintial");
+                console.log(err.message);
+            })
     }
     return (
         <div className="card bg-base-100 mx-auto max-w-sm shrink-0 shadow-2xl">
@@ -11,9 +28,9 @@ const Login = () => {
             <div className="card-body">
                 <form onSubmit={handleLogin} className="fieldset">
                     <label className="label">Email</label>
-                    <input type="email" className="input" placeholder="Email" />
+                    <input type="email" className="input" placeholder="Email" name="email" />
                     <label className="label">Password</label>
-                    <input type="password" className="input" placeholder="Password" />
+                    <input type="password" className="input" placeholder="Password" name="password" />
                     <div><a className="link link-hover">Forgot password?</a></div>
                     <button className="btn btn-neutral mt-4">Login</button>
                     <p className="">or, </p>
