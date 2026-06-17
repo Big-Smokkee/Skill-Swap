@@ -3,6 +3,7 @@ import { PiSwapDuotone } from "react-icons/pi";
 import { use } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, logoutUser, setUser } = use(AuthContext);
@@ -45,19 +46,43 @@ const Navbar = () => {
             </div>
             <div className="navbar-end flex gap-2">
                 {
-                    user ? <button onClick={handleLogout}
-                        className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
-                        Logout
-                    </button> : <div>
-                        <Link to='/login'
-                            className="btn bg-black text-white hover:bg-emerald-600">
-                            Login
-                        </Link>
-                        <Link to="/signup"
-                            className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
-                            Register
-                        </Link>
+                    user ? <div className="flex items-center gap-3 relative group">
+                        <div className="avatar avatar-online relative">
+                            <div className="w-12 rounded-full">
+                                {
+                                    user.photoURL !== null ? <img src={user.photoURL} /> :
+                                        <div className="flex items-center justify-center w-full h-full text-2xl">
+                                            <span className="text-emerald-500"><FaUser></FaUser></span>
+                                        </div>
+
+                                }
+                            </div>
+                            {/* Hover text */}
+                            <span className="absolute left-[-20] top-1/2 -translate-y-1/2 
+                     opacity-0 group-hover:opacity-100 
+                     transition-all duration-300 
+                     bg-black text-white text-sm px-2 py-1 rounded">
+                                {user.displayName || "User"}
+                            </span>
+                        </div>
+                        <button
+                            onClick={handleLogout}
+                            className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400"
+                        >
+                            Logout
+                        </button>
                     </div>
+                        :
+                        <div>
+                            <Link to='/login'
+                                className="btn bg-black text-white hover:bg-emerald-600">
+                                Login
+                            </Link>
+                            <Link to="/signup"
+                                className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400">
+                                Register
+                            </Link>
+                        </div>
                 }
 
 
