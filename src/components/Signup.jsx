@@ -5,19 +5,30 @@ import { toast } from "react-toastify";
 
 
 const Signup = () => {
-    const { signUpNewUser, signInWithGoogle } = use(AuthContext);
-    console.log(signUpNewUser);
+    const { setUser, signUpNewUser, signInWithGoogle, updateUserProfile } = use(AuthContext);
     const handleRegister = (e) => {
         e.preventDefault();
-        // const name = e.target.name.value;
+        const name = e.target.name.value;
         const email = e.target.email.value;
-        // const photoURL = e.target.photoURL.value;
+        const photoURL = e.target.photoURL.value;
         const password = e.target.password.value;
-        // console.log({ name, email, photoURL, password });
+        const userProfileUpdateObject = {
+            name,
+            photoURL
+        }
         signUpNewUser(email, password)
-            .then(res => {
-                toast("Register completed!");
-                console.log(res.user)
+            .then(res1 => {
+                updateUserProfile(userProfileUpdateObject)
+                    .then(() => {
+                        toast("Registration completed!");
+                        console.log(res1.user);
+                        setUser(res1.user);
+                    })
+                    .catch((err) => {
+                        toast("There was a problem in creating the user profile");
+                        console.log(err);
+                        return;
+                    })
             })
             .catch(err => {
                 toast("Error in registration");
