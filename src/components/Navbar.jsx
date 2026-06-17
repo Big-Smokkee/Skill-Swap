@@ -50,7 +50,8 @@ const Navbar = () => {
                         <div className="avatar avatar-online relative">
                             <div className="w-12 rounded-full">
                                 {
-                                    user.photoURL !== null ? <img src={user.photoURL} /> :
+                                    user.photoURL !== null ? <img src={user.photoURL} alt="Invalid" />
+                                        :
                                         <div className="flex items-center justify-center w-full h-full text-2xl">
                                             <span className="text-emerald-500"><FaUser></FaUser></span>
                                         </div>
