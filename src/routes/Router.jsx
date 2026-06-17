@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
-
 import HomeLayout from "../layouts/HomeLayout";
 import Hero from "../home/Hero";
 import Login from "../components/Login";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
 import Signup from "../components/Signup";
+import SkillDetails from "../pages/SkillDetails";
 
 const Router = createBrowserRouter([
     {
@@ -16,6 +16,12 @@ const Router = createBrowserRouter([
                 loader: () => fetch("/skills.json"),
                 Component: Hero,
             },
+            {
+                path: '/skills/:id',
+                Component: SkillDetails,
+                loader: () => fetch("/skills.json"),
+            }
+
         ],
     },
     {
