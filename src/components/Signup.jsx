@@ -2,6 +2,7 @@ import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Signup = () => {
@@ -11,6 +12,7 @@ const Signup = () => {
     const handleNavigation = () => {
         navigate('/');
     }
+    const [showPassword, setShowPassword] = useState(false);
     const handleRegister = (e) => {
         e.preventDefault();
 
@@ -75,16 +77,29 @@ const Signup = () => {
                 <form onSubmit={handleRegister} className="fieldset">
                     {/* name */}
                     <label className="label">Name</label>
-                    <input type="text" className="input" placeholder="Name" name="name" />
+                    <input type="text" className="input w-full  bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg" placeholder="Name" name="name" />
                     {/* email */}
                     <label className="label">Email</label>
-                    <input type="email" className="input" placeholder="Email" name="email" />
+                    <input type="email" className="input w-full  bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg" placeholder="Email" name="email" />
                     {/* phot url */}
                     <label className="label">Photo URL</label>
-                    <input type="text" className="input" placeholder="Photo URL" name="photoURL" />
+                    <input type="text" className="input w-full  bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg" placeholder="Photo URL" name="photoURL" />
                     {/* password */}
                     <label className="label">Password</label>
-                    <input type="password" className="input" placeholder="Password" name="password" />
+                    <div className="relative w-full">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="input w-full pr-10 bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg"
+                            placeholder="Password"
+                            name="password"
+                        />
+                        <span
+                            className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-400 hover:text-emerald-400 transition-colors"
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                        </span>
+                    </div>
                     {
                         error && <small className="text-red-600">Password must have uppercase, lowercase, and be at least 6 characters long.</small>
                     }
