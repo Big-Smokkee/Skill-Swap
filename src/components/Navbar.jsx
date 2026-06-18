@@ -7,7 +7,7 @@ import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, logoutUser, setUser } = use(AuthContext);
-    console.log(user);
+    // console.log(user);
     const handleLogout = () => {
         logoutUser()
             .then(() => {
