@@ -26,7 +26,7 @@ const ForgetPasswordPage = () => {
             })
     }
     return (
-        <div className='flex  items-center justify-center space-y-6 my'>
+        <div className='flex  items-center justify-center space-x-6 shadow-2xl shadow-emerald-700 rounded-3xl py-12'>
 
             <img src={forgotPasswordImage} alt="" className='w-100 rounded-3xl' />
 
@@ -37,8 +37,8 @@ const ForgetPasswordPage = () => {
                     </p>
                     <form className="fieldset" onSubmit={handleResetPassword}>
                         <label className="label">Email</label>
-                        <input type="email" className="input w-full" placeholder="Email" name='email' {...(location.state ? { value: location.state } : {})} />
-                        <button className="btn btn-outline hover:bg-emerald-500 mt-4" >Reset Password</button>
+                        <input type="email" className="input w-full  bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg" placeholder="Email" name='email' {...(location.state ? { value: location.state } : {})} />
+                        <button className="btn btn-outline border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white mt-4" >Reset Password</button>
                     </form>
                 </div>
             </div>
