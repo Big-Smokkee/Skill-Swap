@@ -1,12 +1,18 @@
 import { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 
 const Login = () => {
-    const { user, loginExistingUser, signInWithGoogle } = use(AuthContext);
-    console.log(user);
+    const { setUser, loginExistingUser, signInWithGoogle } = use(AuthContext);
+    // console.log(user);
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
+    const handleNavigation = () => {
+        navigate(`${location.state ? location.state : "/"}`)
+    }
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -15,7 +21,9 @@ const Login = () => {
             .then(res => {
                 const user = res.user
                 toast("Login Successful!");
-                console.log(user);
+                setUser(user);
+                // <Navigate to={`${ location.state ? location.state : "/" }`}></Navigate>
+                handleNavigation();
             })
             .catch(err => {
                 toast("Invalid Credintial");
@@ -27,9 +35,11 @@ const Login = () => {
         console.log("submitted");
         signInWithGoogle()
             .then(res => {
-                const user = res.user
+                const user = res.user;
                 toast("Login Successful!");
-                console.log(user);
+                // console.log(user);
+                setUser(user);
+                handleNavigation();
             })
             .catch(err => {
                 toast("Invalid Credintial");
