@@ -4,7 +4,11 @@ import Hero from "../home/Hero";
 import Login from "../components/Login";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
 import Signup from "../components/Signup";
-import SkillDetails from "../pages/SkillDetails";
+import ProfileLayout from "../layouts/ProfileLayout";
+import PrivateRoute from "./PrivateRoute";
+import SkillDetails from "../pages/skillDetails";
+import LoadingPage from "../pages/LoadingPage";
+
 
 const Router = createBrowserRouter([
     {
@@ -15,11 +19,15 @@ const Router = createBrowserRouter([
                 index: true,
                 loader: () => fetch("/skills.json"),
                 Component: Hero,
+                hydrateFallbackElement: <LoadingPage></LoadingPage>
             },
             {
                 path: '/skills/:id',
-                Component: SkillDetails,
                 loader: () => fetch("/skills.json"),
+                element: <PrivateRoute>
+                    <SkillDetails></SkillDetails>
+                </PrivateRoute>,
+                hydrateFallbackElement: <LoadingPage></LoadingPage>
             }
 
         ],
@@ -38,6 +46,16 @@ const Router = createBrowserRouter([
             }
 
         ]
+    },
+    {
+        path: '/profile',
+        element: <PrivateRoute>
+            <ProfileLayout></ProfileLayout>
+        </PrivateRoute>
+    },
+    {
+        path: '/browse',
+        element: <LoadingPage></LoadingPage>
     },
     {
         path: "*",
