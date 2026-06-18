@@ -1,17 +1,32 @@
-import { use } from "react";
-import { Link } from "react-router";
+import { use, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 
 const Signup = () => {
     const { setUser, signUpNewUser, signInWithGoogle, updateUserProfile } = use(AuthContext);
+    const [error, setError] = useState(false);
+    const navigate = useNavigate();
+    const handleNavigation = () => {
+        navigate('/');
+    }
     const handleRegister = (e) => {
         e.preventDefault();
+
         const name = e.target.name.value;
         const email = e.target.email.value;
         const photoURL = e.target.photoURL.value;
         const password = e.target.password.value;
+
+        // Regex: at least 1 uppercase, 1 lowercase, min length 6
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+            setError(true);
+            return;
+        }
+        setError(false);
+
         const userProfileUpdateObject = {
             name,
             photoURL
@@ -21,8 +36,9 @@ const Signup = () => {
                 updateUserProfile(userProfileUpdateObject)
                     .then(() => {
                         toast("Registration completed!");
-                        console.log(res1.user);
+                        // console.log(res1.user);
                         setUser(res1.user);
+                        handleNavigation();
                     })
                     .catch((err) => {
                         toast("There was a problem in creating the user profile");
@@ -44,6 +60,8 @@ const Signup = () => {
                 const user = res.user
                 toast("Register Successful!");
                 console.log(user);
+                setUser(user);
+                handleNavigation();
             })
             .catch(err => {
                 toast("Error in registration");
@@ -67,6 +85,9 @@ const Signup = () => {
                     {/* password */}
                     <label className="label">Password</label>
                     <input type="password" className="input" placeholder="Password" name="password" />
+                    {
+                        error && <small className="text-red-600">Password must have uppercase, lowercase, and be at least 6 characters long.</small>
+                    }
                     <button className="btn btn-neutral mt-4">Register</button>
                     <p className="">or, </p>
                     {/* Google */}
