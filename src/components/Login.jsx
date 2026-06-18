@@ -1,5 +1,5 @@
-import { use } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { use, useState } from "react";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -13,6 +13,7 @@ const Login = () => {
     const handleNavigation = () => {
         navigate(`${location.state ? location.state : "/"}`)
     }
+    const [email, setEmail] = useState("");
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -46,16 +47,25 @@ const Login = () => {
                 console.log(err.message);
             })
     }
+
+    // forget password functionality
+    const handleEmailOnChangeForForgetPasword = (e) => {
+        setEmail(e.target.value);
+    }
+    const handleForgetPassword = () => {
+        email ? navigate("/forget-password", { state: email }) : navigate("/forget-password");
+
+    }
     return (
         <div className="card bg-base-100 mx-auto max-w-sm shrink-0 shadow-2xl">
             <h1 className="text-5xl font-bold text-center">Login now!</h1>
             <div className="card-body">
                 <form onSubmit={handleLogin} className="fieldset">
                     <label className="label">Email</label>
-                    <input type="email" className="input" placeholder="Email" name="email" />
+                    <input type="email" className="input" placeholder="Email" name="email" onChange={handleEmailOnChangeForForgetPasword} />
                     <label className="label">Password</label>
                     <input type="password" className="input" placeholder="Password" name="password" />
-                    <div><a className="link link-hover">Forgot password?</a></div>
+                    <div onClick={handleForgetPassword} className="link link-hover">Forgot password?</div>
                     <button className="btn btn-neutral mt-4">Login</button>
                     <p className="">or, </p>
                     {/* Google */}
