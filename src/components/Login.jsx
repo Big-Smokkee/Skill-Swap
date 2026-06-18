@@ -1,7 +1,8 @@
 import { use, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Login = () => {
@@ -14,6 +15,7 @@ const Login = () => {
         navigate(`${location.state ? location.state : "/"}`)
     }
     const [email, setEmail] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -62,9 +64,22 @@ const Login = () => {
             <div className="card-body">
                 <form onSubmit={handleLogin} className="fieldset">
                     <label className="label">Email</label>
-                    <input type="email" className="input" placeholder="Email" name="email" onChange={handleEmailOnChangeForForgetPasword} />
+                    <input type="email" className="input w-full  bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg" placeholder="Email" name="email" onChange={handleEmailOnChangeForForgetPasword} />
                     <label className="label">Password</label>
-                    <input type="password" className="input" placeholder="Password" name="password" />
+                    <div className="relative w-full">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="input w-full pr-10 bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg"
+                            placeholder="Password"
+                            name="password"
+                        />
+                        <span
+                            className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-400 hover:text-emerald-400 transition-colors"
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                        </span>
+                    </div>
                     <div onClick={handleForgetPassword} className="link link-hover">Forgot password?</div>
                     <button className="btn btn-neutral mt-4">Login</button>
                     <p className="">or, </p>
