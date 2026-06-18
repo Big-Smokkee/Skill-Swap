@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-
 import SkillCard from '../components/SkillCard';
 import TopRatedProviders from './TopRatedProviders';
 import HowItWorks from './HowItWorks';
@@ -36,7 +35,7 @@ const Hero = () => {
                         clickable: true,
                     }}
                 >
-                    {/* 1st slide */}
+
                     <SwiperSlide>
                         <div
                             className="hero min-h-[70vh] rounded-2xl"
@@ -65,7 +64,7 @@ const Hero = () => {
                             </div>
                         </div>
                     </SwiperSlide>
-                    {/* 2nd one */}
+
                     <SwiperSlide>
                         <div
                             className="hero min-h-[70vh] rounded-2xl"
@@ -94,7 +93,7 @@ const Hero = () => {
                             </div>
                         </div>
                     </SwiperSlide>
-                    {/* 3rd */}
+
                     <SwiperSlide>
                         <div
                             className="hero min-h-[70vh] rounded-2xl"
