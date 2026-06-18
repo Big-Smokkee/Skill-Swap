@@ -8,6 +8,7 @@ import ProfileLayout from "../layouts/ProfileLayout";
 import PrivateRoute from "./PrivateRoute";
 import SkillDetails from "../pages/skillDetails";
 import LoadingPage from "../pages/LoadingPage";
+import ForgetPasswordPage from "../pages/ForgetPasswordPage";
 
 
 const Router = createBrowserRouter([
@@ -43,8 +44,11 @@ const Router = createBrowserRouter([
             {
                 path: '/signup',
                 Component: Signup
+            },
+            {
+                path: '/forget-password',
+                Component: ForgetPasswordPage
             }
-
         ]
     },
     {
@@ -61,6 +65,7 @@ const Router = createBrowserRouter([
         path: "*",
         Component: () => <h1>404 - Page Not Found</h1>,
     },
+
 ]);
 
 export default Router;
