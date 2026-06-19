@@ -125,7 +125,16 @@ const Hero = () => {
                     </SwiperSlide>
                 </Swiper>
             </section>
-            <p className='text-center text-3xl my-8 px-6 md:px-20 lg:px-40'>``Connect with people worldwide to teach what you know and learn what you don't. All for free.``</p>
+            <div className=" text-center my-12 px-6 md:px-20 lg:px-40">
+
+
+                <p className="text-lg md:text-2xl font-medium italic ">
+                    “Connect with people worldwide to teach what you know and learn what you don't. All for free.”
+                </p>
+
+
+            </div>
+
 
             <div className='flex items-center justify-center'>
                 <button className="btn bg-emerald-600 text-white hover:bg-black hover:text-emerald-400 text-lg px-8 py-4">
