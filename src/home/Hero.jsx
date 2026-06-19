@@ -7,6 +7,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import SkillCard from '../components/SkillCard';
 import TopRatedProviders from './TopRatedProviders';
 import HowItWorks from './HowItWorks';
+import SuccessStories from './SuccessStories';
 
 const Hero = () => {
     const data = useLoaderData();
@@ -143,6 +144,9 @@ const Hero = () => {
             {/* How it works */}
             <section>
                 <HowItWorks></HowItWorks>
+            </section>
+            <section>
+                <SuccessStories></SuccessStories>
             </section>
         </div>
     );
