@@ -6,7 +6,7 @@ import { IoMdCloseCircle, IoMdMail } from "react-icons/io";
 import { toast } from "react-toastify";
 
 const MyProfilePage = () => {
-    const { user, updateUserProfile } = use(AuthContext);
+    const { user, updateUserProfile, setLoading } = use(AuthContext);
     const [profileUpdateButton, setProfileUpdateButton] = useState(false);
 
     const handleUpdateProfileForm = (e) => {
@@ -22,6 +22,7 @@ const MyProfilePage = () => {
         updateUserProfile(userProfileUpdateObject)
             .then(() => {
                 toast("Profile Updated Successfully!");
+                setLoading(false);
             })
             .catch((err) => {
                 toast("Problem occured when trying to update profile");
