@@ -1,6 +1,7 @@
 import { FaEnvelope, FaStar } from 'react-icons/fa';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { IoMdClose } from 'react-icons/io';
 
 const SkillDetailsCard = ({ skill }) => {
     const {
@@ -57,7 +58,7 @@ const SkillDetailsCard = ({ skill }) => {
                             <span className="text-sm text-gray-400">
                                 Slots Available: {slotsAvailable}
                             </span>
-                            <span className="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded-full">
+                            <span className="px-3 py-1 text-xs font-medium bg-blue-100 text-emerald-600 rounded-full">
                                 {category}
                             </span>
                         </div>
@@ -74,45 +75,44 @@ const SkillDetailsCard = ({ skill }) => {
             </div>
 
             {/* Modal */}
-            {/* Modal */}
             {isOpen && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-xl shadow-2xl p-8 w-11/12 max-w-md relative">
+                <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+                    <div className="bg-base-100 rounded-xl shadow-2xl p-8 w-11/12 max-w-md relative">
                         {/* Close button */}
                         <button
-                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors"
+                            className="absolute top-4 right-4 text-gray-500 hover:text-emerald-800 transition-colors font-bold"
                             onClick={() => setIsOpen(false)}
                         >
-                            ✕
+                            <IoMdClose size={20}></IoMdClose>
                         </button>
 
                         {/* Form */}
                         <form className="space-y-4" onSubmit={handleForm}>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-sm font-medium text-emerald-500 mb-1">
                                     Name
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-black"
+                                    className="input w-full bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg"
                                     placeholder="Your Name"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-sm font-medium text-emerald-500 mb-1">
                                     Email
                                 </label>
                                 <input
                                     type="email"
-                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-black"
+                                    className="input w-full  bg-gray-900 border border-emerald-500 text-white placeholder-gray-400 rounded-lg"
                                     placeholder="Email"
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-emerald-600 text-white font-semibold py-2 rounded-lg hover:bg-emerald-700 transition-colors"
+                                className="w-full btn btn-outline border border-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 rounded-lg hover:bg-emerald-700 transition-colors"
                             >
                                 Submit
                             </button>
