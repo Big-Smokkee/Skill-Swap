@@ -9,6 +9,8 @@ import PrivateRoute from "./PrivateRoute";
 import SkillDetails from "../pages/skillDetails";
 import LoadingPage from "../pages/LoadingPage";
 import ForgetPasswordPage from "../pages/ForgetPasswordPage";
+import RoutingErrorPage from "../pages/RoutingErrorPage";
+import SkillNotFoundPage from "../pages/SkillNotFoundPage";
 
 
 const Router = createBrowserRouter([
@@ -28,7 +30,8 @@ const Router = createBrowserRouter([
                 element: <PrivateRoute>
                     <SkillDetails></SkillDetails>
                 </PrivateRoute>,
-                hydrateFallbackElement: <LoadingPage></LoadingPage>
+                hydrateFallbackElement: <LoadingPage></LoadingPage>,
+                errorElement: <SkillNotFoundPage></SkillNotFoundPage>
             }
 
         ],
@@ -63,7 +66,7 @@ const Router = createBrowserRouter([
     },
     {
         path: "*",
-        Component: () => <h1>404 - Page Not Found</h1>,
+        element: <RoutingErrorPage></RoutingErrorPage>
     },
 
 ]);
