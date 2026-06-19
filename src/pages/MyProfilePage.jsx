@@ -34,7 +34,7 @@ const MyProfilePage = () => {
         <section className="mt-16">
             {!profileUpdateButton ? (
                 <div
-                    className={`card bg-gray-900 w-full max-w-md shadow-xl rounded-2xl mx-auto border border-gray-200 
+                    className={`card bg-gray-900 w-full max-w-xs sm:max-w-sm md:max-w-md shadow-2xl shadow-emerald-800 rounded-2xl mx-auto border border-gray-200 
             animate__animated ${profileUpdateButton ? 'animate__backOutLeft' : 'animate__fadeIn'}`}
                 >
                     <div className="card-body items-center text-center space-y-6">
