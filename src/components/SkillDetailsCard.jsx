@@ -112,7 +112,7 @@ const SkillDetailsCard = ({ skill }) => {
 
                             <button
                                 type="submit"
-                                className="w-full btn btn-outline border border-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 rounded-lg hover:bg-emerald-700 transition-colors"
+                                className="w-full btn btn-outline border border-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 rounded-lg  transition-colors"
                             >
                                 Submit
                             </button>
