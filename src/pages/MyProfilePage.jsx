@@ -39,7 +39,7 @@ const MyProfilePage = () => {
                 >
                     <div className="card-body items-center text-center space-y-6">
                         {/* Avatar */}
-                        <div className="w-34 h-34 rounded-3xl overflow-hidden border-4 border-emerald-500 shadow-md group">
+                        <div className="w-54 h-54 rounded-3xl overflow-hidden border-4 border-emerald-500 shadow-md group">
                             {user?.photoURL !== null ? (
                                 <img
                                     src={user.photoURL}
