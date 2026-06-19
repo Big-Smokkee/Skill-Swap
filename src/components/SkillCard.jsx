@@ -7,8 +7,8 @@ const SkillCard = ({ data }) => {
         <div className="space-y-6">
             {/* Section Title */}
 
-            <h2 className="text-5xl font-bold text-center">
-                Popular Skills
+            <h2 className="text-3xl md:text-5xl font-bold text-center">
+                Popular <span className="text-emerald-500">Skills</span>
             </h2>
 
             {/* Grid of Skills */}
