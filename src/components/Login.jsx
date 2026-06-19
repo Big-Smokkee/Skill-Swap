@@ -9,7 +9,7 @@ const Login = () => {
     const { setUser, loginExistingUser, signInWithGoogle } = use(AuthContext);
     // console.log(user);
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     const navigate = useNavigate();
     const handleNavigation = () => {
         navigate(`${location.state ? location.state : "/"}`)
