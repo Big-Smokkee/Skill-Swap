@@ -32,12 +32,12 @@ const SkillDetailsCard = ({ skill }) => {
                     <img
                         src={image}
                         alt={skillName}
-                        className="max-w-md rounded-xl shadow-2xl object-cover"
+                        className="max-w-xs sm:max-w-sm md:max-w-md rounded-xl shadow-2xl object-cover"
                     />
 
                     {/* Content */}
                     <div className="space-y-4 text-center lg:text-left">
-                        <h1 className="text-4xl font-bold">{skillName}</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold">{skillName}</h1>
                         <p className="text-lg text-gray-600">
                             by <span className="font-semibold text-emerald-600">{providerName}</span>
                         </p>
