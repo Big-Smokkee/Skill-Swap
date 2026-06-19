@@ -11,7 +11,7 @@ import SuccessStories from './SuccessStories';
 
 const Hero = () => {
     const data = useLoaderData();
-    console.log(data);
+    // console.log(data);
 
     return (
 
